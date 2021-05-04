@@ -1,0 +1,62 @@
+.container {
+  border: 1px solid #000;
+  max-width: 900px;
+  width: 80vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: .5em 1em;
+  display: flex;
+  justify-content: space-around;
+}
+
+button {
+  cursor: pointer;
+  font-family: Impact;
+  position: relative;
+  width: 28%;
+  height: 2em;
+  border-radius: .5em;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 1.6em;
+  color: #fff;
+}
+
+button:before {
+  content: '';
+  background: #000;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+
+button:hover:before {
+  background: linear-gradient(40deg, #fd16de, #37e6fd);
+  /* filter: blur(10px); */
+  filter: url('#wave') blur(2px);
+}
+
+button:hover {
+  animation: squish .5s;
+}
+
+@keyframes squish {
+  0% {
+    transform: scaleY(1);
+  } 
+  40% {
+    transform: scaleY(1.5);
+  } 
+  70% {
+    transform: scaleY(.7);
+  } 
+  100% {
+    transform: scaleY(1);
+  } 
+}
